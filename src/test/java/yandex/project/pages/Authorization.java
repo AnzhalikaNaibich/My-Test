@@ -2,10 +2,10 @@ package yandex.project.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.ConfigFileReader;
+import yandex.framework.browser.Browser;
 
 
 public class Authorization extends BasePage {
-
     private ConfigFileReader config = ConfigFileReader.configFileReader;
     private By signIn = By.xpath("/html/body/div[1]/div[3]/noindex/div/div/div[2]/div[3]/div[1]/div[6]/div/div/div[1]/a");
     private By inputLogin = By.id("passp-field-login");
@@ -13,19 +13,21 @@ public class Authorization extends BasePage {
     private By inputPassword = By.id("passp-field-passwd");
     private By buttonLogin= By.id("passp:sign-in");
 
-    public Authorization(WebDriver driver) {
-        super(driver);
+    public Authorization() {
+    }
+    public void open() {
+        this.browser.goTo(config.getApplicationUrl());
     }
 
     public void clickSignIn() {
-        driver.findElement(signIn).click();
+        browser.findElement(signIn).click();
     }
 
     public void authorizationOnWeb() {
-       driver.findElement(inputLogin).sendKeys(config.getLogin());
-       driver.findElement(buttonSingIn).click();
-       driver.findElement(inputPassword).sendKeys(config.getPassword());
-       driver.findElement(buttonLogin).click();
+        browser.findElement(inputLogin).sendKeys(config.getLogin());
+        browser.findElement(buttonSingIn).click();
+        browser.findElement(inputPassword).sendKeys(config.getPassword());
+        browser.findElement(buttonLogin).click();
     }
 }
 

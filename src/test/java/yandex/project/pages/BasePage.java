@@ -1,11 +1,12 @@
 package yandex.project.pages;
 
 import org.openqa.selenium.WebDriver;
+import yandex.framework.browser.Browser;
 
 public class BasePage {
-    protected WebDriver driver;
+    protected Browser browser;
 
-    public BasePage(WebDriver driver){
-        this.driver = driver;
+    public BasePage(){
+        this.browser = Browser.BROWSER;
     }
 }

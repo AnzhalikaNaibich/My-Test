@@ -4,26 +4,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ConfigFileReader;
 
 import java.time.Duration;
 
 public class Catalog extends BasePage{
-
-    public Catalog(WebDriver driver) {
-        super(driver);
+    private ConfigFileReader config = ConfigFileReader.configFileReader;
+    public Catalog() {
     }
 
     public void clickCatalog() {
-        driver.findElement(By.id("catalogPopupButton")).click();
+        browser.findElement(By.id("catalogPopupButton")).click();
     }
 
     public void countSections(){
-        int count = driver.findElements(By.xpath("*[@id=\"catalogPopup\"]//li")).size();
+        int count = browser.findElements(By.xpath("*[@id=\"catalogPopup\"]//li")).size();
         System.out.println(count);
     }
 
     public void clickSection(){
-        driver.findElement(By.cssSelector("[href=\"/catalog--kompiuternaia-tekhnika/54425\"]")).click();
+        browser.findElement(By.cssSelector("[href=\"/catalog--kompiuternaia-tekhnika/54425\"]")).click();
     }
 
 }
