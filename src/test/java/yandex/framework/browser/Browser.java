@@ -11,7 +11,8 @@ import java.util.List;
 public class Browser {
     private WebDriver driver;
     private static ConfigFileReader config = ConfigFileReader.configFileReader;
-    public static Browser BROWSER;
+    public static Browser BROWSER = new Browser();
+
 
     private Browser() {
         this.driver = BrowserFactory.getDriver(config.getNameBrowser());
@@ -26,11 +27,11 @@ public class Browser {
     }
 
     public WebElement findElement(By locator) {
-        return this.driver.findElement(locator);
+        return driver.findElement(locator);
     }
 
     public List<WebElement> findElements(By locator) {
-        return this.driver.findElements(locator);
+        return driver.findElements(locator);
     }
 
 }

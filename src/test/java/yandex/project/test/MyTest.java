@@ -1,14 +1,13 @@
 package yandex.project.test;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.ConfigFileReader;
-import yandex.framework.browser.Browser;
 import yandex.project.pages.Authorization;
 import yandex.project.pages.Catalog;
+import yandex.project.pages.JSAlert;
 
 public class MyTest extends BaseTest {
     private ConfigFileReader config = ConfigFileReader.configFileReader;
+
     @Test
     public void firstTestSignIn() {
         Authorization authorization = new Authorization();
@@ -22,5 +21,13 @@ public class MyTest extends BaseTest {
         catalog.clickCatalog();
         catalog.countSections();
         catalog.clickSection();
+    }
+
+    @Test
+    public void thirdTestAlert(){
+        JSAlert alert = new JSAlert();
+        alert.openWebAlert();
+        alert.checkClickButtons();
+        alert.sendText("Hello, word");
     }
 }

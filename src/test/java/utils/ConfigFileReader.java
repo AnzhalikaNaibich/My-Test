@@ -38,6 +38,12 @@ public class ConfigFileReader {
         else throw new RuntimeException("url not specified in the Configuration.properties file.");
     }
 
+    public String getApplicationUrlAlert() {
+        String urlAlert = properties.getProperty("urlAlert");
+        if (urlAlert != null) return urlAlert;
+        else throw new RuntimeException("urlAlert not specified in the Configuration.properties file.");
+    }
+
     public String getLogin(){
         String login = properties.getProperty("login");
         if (login != null) return login;

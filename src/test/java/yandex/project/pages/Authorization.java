@@ -16,7 +16,7 @@ public class Authorization extends BasePage {
     public Authorization() {
     }
     public void open() {
-        this.browser.goTo(config.getApplicationUrl());
+        browser.goTo(config.getApplicationUrl());
     }
 
     public void clickSignIn() {
