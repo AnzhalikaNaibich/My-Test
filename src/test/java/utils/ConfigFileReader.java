@@ -1,5 +1,4 @@
 package utils;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Properties;
@@ -43,6 +42,12 @@ public class ConfigFileReader {
         if (urlAlert != null) return urlAlert;
         else throw new RuntimeException("urlAlert not specified in the Configuration.properties file.");
     }
+    public String getApplicationUrlExample() {
+        String urlExample = properties.getProperty("urlExample");
+        if (urlExample != null) return urlExample;
+        else throw new RuntimeException("urlExample not specified in the Configuration.properties file.");
+    }
+
 
     public String getLogin(){
         String login = properties.getProperty("login");
