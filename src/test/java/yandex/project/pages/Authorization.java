@@ -7,7 +7,7 @@ import yandex.framework.browser.Browser;
 
 public class Authorization extends BasePage {
     private ConfigFileReader config = ConfigFileReader.configFileReader;
-    private By signIn = By.xpath("/html/body/div[1]/div[3]/noindex/div/div/div[2]/div[3]/div[1]/div[6]/div/div/div[1]/a");
+    private By signIn = By.xpath("/html/body/div[1]/div[2]/noindex/div/div/div[2]/div[3]/div[1]/div[6]/div/div/div[1]/a/span");
     private By inputLogin = By.id("passp-field-login");
     private By buttonSingIn = By.id("passp:sign-in");
     private By inputPassword = By.id("passp-field-passwd");

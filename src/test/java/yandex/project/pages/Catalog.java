@@ -18,7 +18,7 @@ public class Catalog extends BasePage{
     }
 
     public void countSections(){
-        int count = browser.findElements(By.xpath("*[@id=\"catalogPopup\"]//li")).size();
+        int count = browser.findElements(By.className("_1hPrb")).size();
         System.out.println(count);
     }
 
