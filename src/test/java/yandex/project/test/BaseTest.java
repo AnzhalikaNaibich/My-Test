@@ -13,7 +13,7 @@ public class BaseTest {
     public void before(){
         System.setProperty(config.getDriverAdapter(), config.getDriverPath());
         WebDriver driver = Browser.BROWSER.getDriver();
-        driver.manage().timeouts().implicitlyWait(15,
+        driver.manage().timeouts().implicitlyWait(20,
                 TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }

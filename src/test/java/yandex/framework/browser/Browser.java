@@ -11,7 +11,7 @@ import java.util.List;
 public class Browser {
     private WebDriver driver;
     private static ConfigFileReader config = ConfigFileReader.configFileReader;
-    public static Browser BROWSER;
+    public static Browser BROWSER = new Browser();
 
     private Browser() {
         this.driver = BrowserFactory.getDriver(config.getNameBrowser());
